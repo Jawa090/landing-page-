@@ -1,0 +1,694 @@
+/* Footer */
+.site-footer{ background: #0b1220; color: #e5e7eb; margin-top: 40px; }
+.footer-inner{ max-width: 1200px; margin: 0 auto; padding: 28px 20px; display: grid; grid-template-columns: 1.2fr 1fr 1fr; gap: 20px; align-items: center; }
+.footer-logo{ height: 24px; }
+.footer-tag{ margin: 10px 0 0; color: #94a3b8; font-size: 14px; }
+.footer-nav{ display: flex; gap: 14px; justify-content: center; }
+.footer-nav a{ color: #e5e7eb; text-decoration: none; font-weight: 600; font-size: 14px; }
+.footer-nav a:hover{ color: #cbd5e1; }
+.footer-contact{ display: grid; gap: 6px; justify-items: end; }
+.footer-contact a{ color: #e5e7eb; text-decoration: none; font-size: 14px; }
+.footer-contact a:hover{ color: #cbd5e1; }
+.footer-social{ display: flex; gap: 8px; margin-top: 6px; }
+.social-icon{ width: 32px; height: 32px; display: grid; place-items: center; border-radius: 50%; background: rgba(255,255,255,0.06); color: #e5e7eb; }
+.social-icon:hover{ background: rgba(255,255,255,0.12); }
+.footer-bottom{ border-top: 1px solid rgba(255,255,255,0.12); margin-top: 10px; padding: 12px 20px; text-align: center; color: #94a3b8; font-size: 13px; }
+
+@media (max-width: 900px){
+  .footer-inner{ grid-template-columns: 1fr; gap: 16px; text-align: center; }
+  .footer-contact{ justify-items: center; }
+}
+.page {
+  min-height: 100vh;
+  background: #fff;
+  color: #111;
+}
+
+.header {
+  border-bottom: 1px solid #eee;
+}
+
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.brand {
+  height: 28px;
+}
+
+.promo {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: linear-gradient(135deg, #f2f7ff, #e8f0ff);
+  border: 1px solid #d8e5ff;
+  color: #173766;
+  padding: 8px 12px;
+  border-radius: 999px;
+  position: static;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(67, 97, 238, 0.15);
+}
+
+.promo-text {
+  font-size: 14px;
+}
+
+.promo-cta {
+  background: linear-gradient(135deg, #4b64ff, #2f49e2);
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-weight: 600;
+}
+
+/* subtle shine effect */
+.promo::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 120%;
+  height: 100%;
+  background: linear-gradient(110deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.6) 30%, rgba(255, 255, 255, 0) 60%);
+  transform: skewX(-20deg);
+  animation: promo-shine 4s ease-in-out infinite;
+}
+
+@keyframes promo-shine {
+  0% {
+    left: -150%;
+  }
+
+  50% {
+    left: 130%;
+  }
+
+  100% {
+    left: 130%;
+  }
+}
+
+.hero {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 60% 40%;
+  gap: 32px;
+  padding: 12px 20px 36px;
+}
+.hero-right {
+  align-self: start;
+  margin-top: 0;
+}
+
+.hero-left { padding-top: 0; }
+
+.title {
+  font-size: 42px;
+  line-height: 1.15;
+  margin: 0 0 16px 0;
+  text-align: center;
+  font-weight: 800;
+}
+
+.subtitle {
+  font-size: 18px;
+  color: #444;
+  margin: 0 0 28px 0;
+}
+
+.hero-copy {
+  font-size: 16px;
+  color: #2a2a2a;
+  line-height: 1.55;
+}
+
+/* Left-column services slider - does not affect right column */
+.services-slider {
+  margin-top: 12px;
+  border: 1px solid #ececec;
+  border-radius: 10px;
+  background: #fafafa;
+  overflow: hidden;
+  width: 100%;
+  max-width: 700px;
+  margin-right: auto;
+  position: relative;
+  -webkit-mask-image: linear-gradient(to right, transparent 0, black 24px, black calc(100% - 24px), transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0, black 24px, black calc(100% - 24px), transparent 100%);
+}
+
+.services-track {
+  display: inline-flex;
+  gap: 18px;
+  white-space: nowrap;
+  padding: 12px 12px;
+  animation: services-marquee 45s linear infinite;
+}
+
+.services-slider:hover .services-track {
+  animation-play-state: paused;
+}
+
+.service {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border-radius: 12px;
+  background: #ffffff;
+  border: 1px solid #e6e6e6;
+  box-shadow: 0 2px 8px rgba(16,24,40,0.06);
+  color: #173766;
+  font-weight: 600;
+  font-size: 14px;
+  min-width: 180px;
+}
+
+.service .icon {
+  width: 28px;
+  height: 28px;
+  display: inline-grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #eef2ff;
+  color: #2f49e2;
+  font-size: 16px;
+}
+
+@keyframes services-marquee {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Testimonials */
+.testimonials{
+  background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+  border-top: 1px solid #eef0f2;
+}
+
+.testimonials-inner{
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px 56px;
+}
+
+.section-title{
+  margin: 0 0 20px 0;
+  font-size: 26px;
+  line-height: 1.2;
+  color: #0f172a;
+  text-align: center;
+}
+
+.section-subtitle{
+  margin: 0 auto 20px;
+  max-width: 760px;
+  text-align: center;
+  color: #475467;
+  font-size: 16px;
+}
+
+.client-logos{
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0,1fr));
+  gap: 14px;
+  margin-bottom: 24px;
+  filter: grayscale(100%);
+  opacity: 0.9;
+}
+
+.logo-item{
+  background: #fff;
+  border: 1px solid #eef0f2;
+  border-radius: 12px;
+  height: 56px;
+  display: grid;
+  place-items: center;
+  color: #667085;
+  font-weight: 600;
+}
+
+.reviews{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0,1fr));
+  gap: 16px;
+}
+
+.review-card{
+  background: #ffffff;
+  border: 1px solid #eef0f2;
+  border-radius: 16px;
+  padding: 18px;
+  box-shadow: 0 10px 24px rgba(16,24,40,0.08);
+}
+
+.review-header{ display: grid; grid-template-columns: 40px 1fr auto; gap: 12px; align-items: center; }
+.avatar{ width: 40px; height: 40px; border-radius: 50%; background: #eef2ff; color: #2f49e2; display: grid; place-items: center; font-weight: 700; }
+.person .name{ font-weight: 700; color: #0f172a; }
+.person .role{ font-size: 12px; color: #667085; }
+.stars svg{ display: block; }
+
+.review-stars{ color: #f1b10b; letter-spacing: 2px; font-size: 14px; }
+.review-quote{ margin: 10px 0; color: #344054; font-size: 15px; line-height: 1.5; }
+.review-author{ color: #667085; font-size: 13px; font-weight: 600; }
+
+@media (max-width: 900px){
+  .client-logos{ grid-template-columns: repeat(3, minmax(0,1fr)); }
+  .reviews{ grid-template-columns: 1fr; }
+}
+
+/* Capabilities */
+.capabilities{ background: #ffffff; }
+.capabilities-inner{ max-width: 1200px; margin: 0 auto; padding: 40px 20px 64px; }
+.capability-grid{ display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 16px; margin-top: 12px; }
+.capability-card{ display: grid; grid-template-columns: 44px 1fr; gap: 12px; background: #fff; border: 1px solid #eef0f2; border-radius: 16px; padding: 16px; box-shadow: 0 6px 18px rgba(16,24,40,0.06); }
+.capability-icon{ width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; background: #edf2ff; border: 1px solid #d7e0ff; }
+.capability-title{ font-size: 16px; margin: 2px 0 6px 0; color: #0f172a; }
+.capability-desc{ font-size: 14px; color: #5b6472; margin: 0; }
+
+@media (max-width: 900px){
+  .capability-grid{ grid-template-columns: 1fr; }
+}
+
+/* Social proof */
+.social-proof{ background: transparent; color: #0f172a; }
+.social-proof-inner{ max-width: 1200px; margin: 0 auto; padding: 24px 20px 56px; }
+.social-proof-message{ text-align: center; font-size: 18px; margin: 0 0 8px 0; font-weight: 700; }
+
+/* How we work */
+.how-we-work{ margin: 0 auto 20px; max-width: 1000px; }
+.how-title{ text-align: center; margin: 0 0 12px 0; font-size: 22px; color: #0f172a; }
+.how-grid{ display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 12px; }
+.how-card{ display: grid; grid-template-columns: 36px 1fr; gap: 10px; background: #ffffff; border: 1px solid #eef0f2; border-radius: 14px; padding: 12px; box-shadow: 0 6px 18px rgba(16,24,40,0.06); }
+.how-icon{ width: 36px; height: 36px; border-radius: 50%; display: grid; place-items: center; background: #edf2ff; border: 1px solid #d7e0ff; }
+.how-step{ font-weight: 700; color: #0f172a; }
+.how-desc{ margin: 4px 0 0 0; font-size: 13px; color: #5b6472; }
+
+@media (max-width: 900px){
+  .how-grid{ grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 640px){
+  .how-grid{ grid-template-columns: 1fr; }
+}
+
+.hero-review{ background: transparent; border: none; padding: 12px 22px 22px; }
+.hero-review blockquote{ margin: 0 0 16px 0; font-size: 22px; line-height: 1.4; color: #0f172a; font-weight: 700; text-align: center; }
+.reviewer{ display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; max-width: 420px; margin: 0 auto; text-align: center; }
+.reviewer-avatar{ width: 48px; height: 48px; border-radius: 50%; object-fit: cover; border: 2px solid #e5e7eb; }
+.reviewer-name{ font-weight: 700; color: #0f172a; }
+.reviewer-title{ color: #667085; font-size: 13px; }
+
+@media (max-width: 900px){
+  .ratings{ grid-template-columns: 1fr; }
+}
+/* Feature cards (trophy/shield/cog) */
+.features {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin-top: 49px;
+}
+
+.feature-card {
+  display: grid;
+  grid-template-columns: 44px 1fr;
+  gap: 12px;
+  padding: 16px;
+  background: #ffffff;
+  border: 1px solid #eef0f2;
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(16, 24, 40, 0.06);
+}
+
+.feature-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: #fff7e7;
+  border: 1px solid #ffe3a6;
+}
+
+.feature-title {
+  font-size: 16px;
+  margin: 2px 0 6px 0;
+  color: #0f172a;
+}
+
+.feature-desc {
+  font-size: 13px;
+  color: #5b6472;
+  margin: 0;
+}
+
+/* Always single column for features */
+
+.form-card {
+  background: #f7f6f5;
+  border: 1px solid #e6e6e6;
+  border-radius: 12px;
+  padding: 20px;
+  max-width: none;
+  width: 100%;
+  overflow: hidden;
+  margin-top: 0;
+}
+
+#hubspot-form {
+  width: 100%;
+  overflow: hidden;
+}
+
+.form-title {
+  margin: 0 0 16px 0;
+  font-size: 22px;
+}
+
+.demo-form .grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px 16px;
+  margin-bottom: 12px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 14px;
+}
+
+.field input,
+.field select {
+  height: 40px;
+  padding: 0 10px;
+  border-radius: 8px;
+  border: 1px solid #cfcfcf;
+  background: #fff;
+}
+
+.checkbox {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 13px;
+  color: #555;
+  margin: 8px 0 14px 0;
+}
+
+.submit {
+  height: 44px;
+  border: none;
+  background: #111;
+  color: #fff;
+  border-radius: 10px;
+  padding: 0 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* HubSpot form styling to match provided snippet */
+.hbspt-form label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  margin-bottom: 0.25rem;
+}
+
+.form-card .hbspt-form .input {
+  padding: 0;
+  min-height: unset;
+  border-radius: 50rem;
+  background: #fff;
+  position: relative;
+}
+
+.form-card .hbspt-form .input:hover,
+.form-card .hbspt-form .input:focus-visible,
+.form-card .hbspt-form .input:focus,
+.form-card .hbspt-form input:focus-visible,
+.form-card .hbspt-form textarea:focus-visible,
+.form-card .hbspt-form select:hover,
+.form-card .hbspt-form select:focus-visible {
+  border-color: #4361ee;
+  outline: none;
+}
+
+.form-card .hbspt-form input,
+.form-card .hbspt-form textarea,
+.form-card .hbspt-form select {
+  border: 1px solid #cfcfcf;
+  border-radius: 50rem;
+  background: #fff;
+  padding: 0.625rem 1rem;
+  font-size: 1rem;
+  width: 100%;
+  color: #101828;
+}
+
+.form-card .hbspt-form input.hs-input {
+  height: 44px !important;
+  line-height: 44px;
+  padding: 0 14px;
+  box-sizing: border-box;
+}
+
+.form-card .hbspt-form select.hs-input {
+  height: 44px !important;
+}
+
+.form-card .hbspt-form textarea.hs-input {
+  padding: 1rem 1.25rem;
+  min-height: 120px;
+  border-radius: 16px;
+}
+
+/* Reduce height for the "What problems are you looking to solve with us?" textarea */
+.hbspt-form .hs-what_problems_are_you_looking_to_solve_with_us_ textarea.hs-input,
+.hbspt-form .hs_what_problems_are_you_looking_to_solve_with_us_ textarea.hs-input {
+  min-height: 80px;
+}
+
+/* Ensure placeholder is subtle but entered text is dark */
+.form-card .hbspt-form ::placeholder { color: #98A2B3; opacity: 1; }
+.form-card .hbspt-form input, .form-card .hbspt-form textarea { color: #101828; }
+
+/* Fix Chrome autofill grey/yellow backgrounds */
+.form-card .hbspt-form input:-webkit-autofill,
+.form-card .hbspt-form input:-webkit-autofill:hover,
+.form-card .hbspt-form input:-webkit-autofill:focus,
+.form-card .hbspt-form textarea:-webkit-autofill,
+.form-card .hbspt-form select:-webkit-autofill {
+  -webkit-text-fill-color: #101828;
+  box-shadow: 0 0 0px 1000px #fff inset;
+  transition: background-color 9999s ease-in-out 0s;
+}
+
+/* Ensure company/mobile row boxes align perfectly */
+.hbspt-form .hs_mobilephone, .hbspt-form .hs-company { box-sizing: border-box; min-width: 0; }
+
+.hbspt-form .hs-form-field {
+  margin-bottom: 1.5rem;
+}
+
+.form-card .hbspt-form input[type="submit"],
+.form-card .hbspt-form .hs-button {
+  width: 100%;
+  border-radius: 50rem;
+  padding: 1rem;
+  cursor: pointer;
+  background: #4361ee;
+  color: #fff;
+  font-weight: 500;
+  font-size: 1rem;
+  border: none;
+}
+
+.form-card .hbspt-form input[type="submit"]:hover,
+.form-card .hbspt-form .hs-button:hover {
+  background: #21369a;
+}
+
+.hbspt-form .hs-error-msgs.inputs-list {
+  padding-left: 10px;
+  margin-top: 10px;
+  list-style-type: none;
+  display: none;
+}
+
+.hbspt-form .hs-error-msgs.inputs-list .hs-error-msg { color: red; }
+
+/* Only show validation messages after submit attempt */
+#hubspot-form.show-errors .hs-error-msgs.inputs-list { display: block; }
+
+/* Fix HubSpot two-column fieldsets spacing */
+.form-card .hbspt-form fieldset.form-columns-2 .hs-form-field {
+  width: 100%;
+}
+
+/* Make Full Name and Email appear on same line like in original */
+.form-card .hbspt-form fieldset.form-columns-2 {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.form-card .hbspt-form fieldset.form-columns-2 .hs-form-field {
+  width: 100% !important;
+  margin-bottom: 0 !important;
+}
+
+/* Make select boxes match other input boxes exactly */
+.form-card .hbspt-form select.hs-input {
+  height: 44px !important;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,9 12,15 18,9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 1rem;
+  padding-right: 3rem;
+}
+
+/* Force specific HubSpot fields onto the same line as pairs */
+.hbspt-form .hs_firstname,
+.hbspt-form .hs-email {
+  display: block;
+  width: 100%;
+}
+
+.hbspt-form .hs_firstname { margin-right: 0; }
+
+.hbspt-form .hs_mobilephone,
+.hbspt-form .hs-company {
+  display: inline-block;
+  width: calc(50% - 8px);
+  vertical-align: top;
+}
+
+.hbspt-form .hs_mobilephone { margin-right: 16px; }
+
+/* Stack on small screens */
+@media (max-width: 640px) {
+  .hbspt-form .hs_firstname,
+  .hbspt-form .hs-email,
+  .hbspt-form .hs_mobilephone,
+  .hbspt-form .hs-company { width: 100%; margin-right: 0; display: block; }
+}
+/*
+ Custom form styling to match original design */
+.demo-form {
+  width: 100%;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.5rem;
+}
+
+.form-field label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #4a90a4;
+  margin-bottom: 0.5rem;
+}
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+  border: 1px solid #cfcfcf;
+  border-radius: 50rem;
+  background: #fff;
+  padding: 0.625rem 1rem;
+  font-size: 1rem;
+  width: 100%;
+  color: #111;
+  height: 44px;
+  outline: none;
+}
+
+.form-field textarea {
+  border-radius: 16px;
+  padding: 1rem 1.25rem;
+  min-height: 120px;
+  height: auto;
+  resize: vertical;
+}
+
+.form-field select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,9 12,15 18,9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 1rem;
+  padding-right: 3rem;
+}
+
+.form-field input:hover,
+.form-field input:focus,
+.form-field select:hover,
+.form-field select:focus,
+.form-field textarea:hover,
+.form-field textarea:focus {
+  border-color: #4361ee;
+}
+
+.form-disclaimer {
+  font-size: 0.75rem;
+  color: #666;
+  margin-bottom: 1.5rem;
+  line-height: 1.4;
+}
+
+.form-disclaimer p {
+  margin: 0 0 0.5rem 0;
+}
+
+.submit-btn {
+  width: 100%;
+  border-radius: 50rem;
+  padding: 1rem;
+  cursor: pointer;
+  background: #4361ee;
+  color: #fff;
+  font-weight: 500;
+  font-size: 1rem;
+  border: none;
+  transition: background-color 0.2s;
+}
+
+.submit-btn:hover {
+  background: #21369a;
+}
